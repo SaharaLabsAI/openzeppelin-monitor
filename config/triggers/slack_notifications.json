@@ -1,0 +1,72 @@
+{
+  "evm_large_transfer_usdc_slack": {
+    "name": "Large Transfer Slack Notification",
+    "trigger_type": "slack",
+    "config": {
+      "slack_url": {
+        "type": "plain",
+        "value": "https://hooks.slack.com/services/A/B/C"
+      },
+      "message": {
+        "title": "large_transfer_slack triggered",
+        "body": "Large transfer of ${events.0.args.value} USDC from ${events.0.args.from} to ${events.0.args.to} | https://etherscan.io/tx/${transaction.hash}#eventlog"
+      }
+    }
+  },
+  "evm_large_transfer_usdc_slack_markdown": {
+    "name": "Large Transfer Slack Notification Markdown",
+    "trigger_type": "slack",
+    "config": {
+      "slack_url": {
+        "type": "plain",
+        "value": "https://hooks.slack.com/services/A/B/C"
+      },
+      "message": {
+        "title": "large_transfer_slack triggered",
+        "body": "*USDC Transfer Details*\n*Amount:* ${events.0.args.value} USDC\n*From:* ${events.0.args.from}\n*To:* ${events.0.args.to}\n*Transaction:* <https://etherscan.io/tx/${transaction.hash}#eventlog|View on Etherscan>"
+      }
+    }
+  },
+  "ac_role_change_slack": {
+    "name": "Access Control Role Change Slack Notification",
+    "trigger_type": "slack",
+    "config": {
+      "slack_url": {
+        "type": "plain",
+        "value": "https://hooks.slack.com/services/A/B/C"
+      },
+      "message": {
+        "title": "Access Control Role Change Alert",
+        "body": "Access control role change detected on contract ${address} | Transaction: ${transaction.hash} | Block: ${block.number} | https://explorer.saharaa.info/tx/${transaction.hash}#eventlog"
+      }
+    }
+  },
+  "ac_role_change_slack_markdown": {
+    "name": "Access Control Role Change Slack Notification Markdown",
+    "trigger_type": "slack",
+    "config": {
+      "slack_url": {
+        "type": "plain",
+        "value": "https://hooks.slack.com/services/A/B/C"
+      },
+      "message": {
+        "title": "Access Control Role Change Alert",
+        "body": "*Access Control Role Change Detected*\n*Contract Address:* ${address}\n*Transaction Hash:* ${transaction.hash}\n*Block Number:* ${block.number}\n*Event Type:* ${events.0.name}\n*Transaction:* <https://explorer.saharaa.info/tx/${transaction.hash}#eventlog|View on Etherscan>"
+      }
+    }
+  },
+  "stellar_large_swap_by_dex_slack": {
+    "name": "Large Swap By Dex Slack Notification",
+    "trigger_type": "slack",
+    "config": {
+      "slack_url": {
+        "type": "plain",
+        "value": "https://hooks.slack.com/services/A/B/C"
+      },
+      "message": {
+        "title": "large_swap_by_dex_slack triggered",
+        "body": "${monitor.name} triggered because of a large swap of ${functions.0.args.out_min} tokens | https://stellar.expert/explorer/public/tx/${transaction.hash}"
+      }
+    }
+  }
+}

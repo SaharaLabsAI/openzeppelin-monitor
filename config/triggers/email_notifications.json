@@ -1,0 +1,52 @@
+{
+    "ac_role_change_email": {
+        "name": "Access Control Role Change Email Notification",
+        "trigger_type": "email",
+        "config": {
+            "host": "smtp.gmail.com",
+            "port": 465,
+            "username": {
+                "type": "plain",
+                "value": "your_email@gmail.com"
+            },
+            "password": {
+                "type": "plain",
+                "value": "your_password"
+            },
+            "message": {
+                "title": "Access Control Role Change Alert",
+                "body": "Access control role change detected on contract ${address} | Transaction: ${transaction.hash} | Block: ${block.number} | https://explorer.saharaa.info/tx/${transaction.hash}#eventlog"
+            },
+            "sender": "your_email@gmail.com",
+            "recipients": [
+                "recipient1@example.com",
+                "recipient2@example.com"
+            ]
+        }
+    },
+    "ac_role_change_email_markdown": {
+        "name": "Access Control Role Change Email Notification Markdown",
+        "trigger_type": "email",
+        "config": {
+            "host": "smtp.gmail.com",
+            "port": 465,
+            "username": {
+                "type": "plain",
+                "value": "your_email@gmail.com"
+            },
+            "password": {
+                "type": "plain",
+                "value": "your_password"
+            },
+            "message": {
+                "title": "Access Control Role Change Alert",
+                "body": "## Access Control Role Change Detected\n\n**Contract Address:** ${address}\n\n**Transaction Hash:** ${transaction.hash}\n\n**Block Number:** ${block.number}\n\n**Event Type:** ${events.0.name}\n\n[View transaction on Etherscan](https://explorer.saharaa.info/tx/${transaction.hash}#eventlog)"
+            },
+            "sender": "your_email@gmail.com",
+            "recipients": [
+                "recipient1@example.com",
+                "recipient2@example.com"
+            ]
+        }
+    }
+}
