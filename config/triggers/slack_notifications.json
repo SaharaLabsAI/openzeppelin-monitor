@@ -37,7 +37,7 @@
       },
       "message": {
         "title": "Access Control Role Change Alert",
-        "body": "Access control role change detected on contract ${address} | Transaction: ${transaction.hash} | Block: ${block.number} | https://explorer.saharaa.info/tx/${transaction.hash}#eventlog"
+        "body": "Access control role change detected on contract ${transaction.to} | Transaction: ${transaction.hash} | https://explorer.saharaa.info/tx/${transaction.hash}#eventlog"
       }
     }
   },
